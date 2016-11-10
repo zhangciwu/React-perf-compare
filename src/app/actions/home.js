@@ -16,8 +16,9 @@ export function selectSeatBefore(id) {
         }
         else {
             const nextSelectedSeatIds = [
-                ...selectedSeatIds
-            ].splice(id, 1)
+                ...selectedSeatIds.slice(0, index),
+                ...selectedSeatIds.slice(index + 1),
+            ]
 
             dispatch({
                 type: 'SELECT_SEAT_BEFORE',
@@ -27,7 +28,7 @@ export function selectSeatBefore(id) {
     }
 }
 
-export function selectSeat2(id) {
+export function selectSeatAfter(id) {
     return (dispatch, getState) => {
         const {seats, selectedSeatIds} = getState().home
         const index = selectedSeatIds.indexOf(id)
@@ -44,6 +45,7 @@ export function selectSeat2(id) {
                 nextSeat,
                 ...seats.slice(id + 1),
             ]
+
             dispatch({
                 type: 'SELECT_SEAT',
                 seats: nextSeats,
@@ -52,8 +54,8 @@ export function selectSeat2(id) {
         }
         else {
             const nextSelectedSeatIds = [
-                ...selectedSeatIds.slice(0, id),
-                ...selectedSeatIds.slice(id + 1),
+                ...selectedSeatIds.slice(0, index),
+                ...selectedSeatIds.slice(index + 1),
             ]
             const nextSeat = Object.assign({}, seats[id], {
                 color: 'gray'
