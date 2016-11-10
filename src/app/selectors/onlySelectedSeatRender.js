@@ -5,12 +5,7 @@ const getSeatIds = state => state.home.seatIds
 const getSelectedSeatIds = state => state.home.selectedSeatIds
 
 const getSeat = (state, id) => {
-    const seat = state.home.seats[id]
-    return seat
-    // const isAvailable = state.home.selectedSeatIds.indexOf(id) === -1
-    // return isAvailable ? seat : Object.assign({}, seat, {
-    //     color: 'red',
-    // })
+    return state.home.seats[id]
 }
 
 const makeGetSeat = () => {
@@ -27,9 +22,7 @@ const makeGetSeat = () => {
 export const makeMapStateToProps = (state, props) => {
     const {id} = props
     const getSeat = makeGetSeat()
-    const mapStateToProps = (state) => {
-        return getSeat(state, id)
-    }
+    const mapStateToProps = (state) => getSeat(state, id)
     return mapStateToProps
 }
 

@@ -1,3 +1,4 @@
+import './page'
 import React from 'react'
 import ReactDom from 'react-dom'
 import { Router, Route, browserHistory } from 'react-router'
@@ -8,12 +9,14 @@ import configureStore from 'app/store/configureStore'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import Home from 'react-proxy?name=home!./home'
+import OnlySelectedSeatRender from 'react-proxy?name=onlySelectedSeatRender!./onlySelectedSeatRender'
 
 Object.assign = objectAssign
 
 const routes = history => (
     <Router history={history}>
         <Route path="/" component={Home} />
+        <Route path="/page3" component={OnlySelectedSeatRender}></Route>
         <Route path="*" component={Home} />
     </Router>
 )

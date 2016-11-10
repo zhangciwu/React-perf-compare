@@ -1,6 +1,6 @@
 import connect from 'utils/connect'
 import {connect as con} from 'react-redux'
-import {makeSeatIds, makeMapStateToProps} from 'app/selectors/home'
+import {makeSeatIds, makeMapStateToProps} from 'app/selectors/onlySelectedSeatRender'
 
 @connect(makeSeatIds)
 export default class Home extends React.Component {
@@ -33,7 +33,6 @@ class Seat extends React.Component {
         console.timeEnd('update')
     }
     render() {
-        // console.log('---')
         const {seat, selectSeat} = this.props
 
         return (

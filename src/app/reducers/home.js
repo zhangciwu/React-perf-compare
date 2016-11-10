@@ -9,17 +9,10 @@ const initialState = {
 export default function home (state = initialState, action) {
     switch (action.type) {
         case 'SELECT_SEAT':
-            const index = state.selectedSeatIds.indexOf(action.id)
-            if (index === -1) {
-                return Object.assign({}, state, {
-                    selectedSeatIds: [...state.selectedSeatIds, action.id]
-                })
-            }
-            else {
-                return Object.assign({}, state, {
-                    selectedSeatIds: [...state.selectedSeatIds.slice(0, index), ...state.selectedSeatIds.slice(index + 1)]
-                })
-            }
+            return Object.assign({}, state, {
+                seats: action.seats,
+                selectedSeatIds: action.selectedSeatIds,
+            })
         default:
             return state
     }
