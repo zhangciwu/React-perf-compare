@@ -1,0 +1,24 @@
+{
+  "name": "pepper",
+  "version": "0.0.1",
+  "description": "wepiao front end solution",
+  "main": "app.js",
+  "author": "FEI@wepiao.com",
+  "license": "ISC",
+  "scripts": {
+    "start": "pepper start",
+    "pepper": "pepper"
+  },
+  "dependencies": {
+    "classnames": "^1.2.0",
+    "history": "^2.0.1",
+    "object-assign": "^4.0.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.0.0",
+    "react-router-redux": "^4.0.7",
+    "redux": "^3.6.0",
+    "reselect": "^2.5.4"
+  }
+}
