@@ -1,23 +1,22 @@
 import connect from 'utils/connect'
-import {connect as con} from 'react-redux'
-import {makeSeatIds, makeMapStateToProps} from 'app/selectors/home'
+import homeSelector from 'app/selectors/home'
 
-@connect(makeSeatIds)
+@connect(homeSelector)
 export default class Home extends React.Component {
     selectSeat = id => {
         console.time('update')
-        this.props.actions.selectSeat(id)
+        this.props.actions.selectSeatBefore(id)
     }
 
     render() {
-        const {seatIds} = this.props
+        const {seats} = this.props
 
         return (
             <ul className="Seats">
                 {
-                    seatIds.map(id => <Seat
-                        key={id}
-                        id={id}
+                    seats.map(seat => <Seat
+                        key={seat.id}
+                        seat={seat}
                         selectSeat={this.selectSeat}
                         />
                     )
@@ -27,13 +26,19 @@ export default class Home extends React.Component {
     }
 }
 
-@con(makeMapStateToProps)
 class Seat extends React.Component {
     componentDidUpdate() {
         console.timeEnd('update')
     }
+    
+    shouldComponentUpdate(nextProps) {
+        const {seat} = this.props
+
+        return nextProps.seat.id !== seat.id ||
+            nextProps.seat.color !== seat.color
+    }
+
     render() {
-        // console.log('---')
         const {seat, selectSeat} = this.props
 
         return (

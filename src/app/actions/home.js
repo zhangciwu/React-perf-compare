@@ -1,4 +1,33 @@
-export function selectSeat(id) {
+export function selectSeatBefore(id) {
+    return (dispatch, getState) => {
+        const {selectedSeatIds} = getState().home
+        const index = selectedSeatIds.indexOf(id)
+
+        if (index === -1) {
+            const nextSelectedSeatIds = [
+                ...selectedSeatIds,
+                id,
+            ]
+
+            dispatch({
+                type: 'SELECT_SEAT_BEFORE',
+                selectedSeatIds: nextSelectedSeatIds,
+            })
+        }
+        else {
+            const nextSelectedSeatIds = [
+                ...selectedSeatIds
+            ].splice(id, 1)
+
+            dispatch({
+                type: 'SELECT_SEAT_BEFORE',
+                selectedSeatIds: nextSelectedSeatIds,
+            })
+        }
+    }
+}
+
+export function selectSeat2(id) {
     return (dispatch, getState) => {
         const {seats, selectedSeatIds} = getState().home
         const index = selectedSeatIds.indexOf(id)

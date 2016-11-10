@@ -8,6 +8,10 @@ const initialState = {
 
 export default function home (state = initialState, action) {
     switch (action.type) {
+        case 'SELECT_SEAT_BEFORE':
+            return Object.assign({}, state, {
+                selectedSeatIds: action.selectedSeatIds,
+            })
         case 'SELECT_SEAT':
             return Object.assign({}, state, {
                 seats: action.seats,

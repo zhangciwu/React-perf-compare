@@ -6,7 +6,7 @@ import {makeSeatIds, makeMapStateToProps} from 'app/selectors/onlySelectedSeatRe
 export default class Home extends React.Component {
     selectSeat = id => {
         console.time('update')
-        this.props.actions.selectSeat(id)
+        this.props.actions.selectSeat2(id)
     }
 
     render() {
