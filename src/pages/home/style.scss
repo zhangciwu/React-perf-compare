@@ -1,15 +1,17 @@
-.Home {
-    &__Title {
-        text-align: center;
-        margin-top: 20px;
-        padding-top: 30px;
-        border-top: 1px solid #efefef;
+body {
+    margin: 0;
+}
+.Seats {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 100vh;
+    overflow: auto;
+    
+    .Seat {
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin: 0 3px 3px 0;
     }
-    &__Desc {
-        text-align: center;
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #efefef;
-    }
-
 }
