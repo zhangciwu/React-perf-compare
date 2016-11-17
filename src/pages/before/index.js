@@ -2,7 +2,7 @@ import connect from 'utils/connect'
 import beforeSelector from 'app/selectors/before'
 
 @connect(beforeSelector)
-export default class Home extends React.Component {
+export default class Seats extends React.Component {
     selectSeat = id => {
         console.time('update')
         this.props.actions.selectSeatBefore(id)

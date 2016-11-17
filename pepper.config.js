@@ -16,7 +16,7 @@ module.exports = {
         "start"         :   "",                    // here use relative path
         "test"          :   "",
         "pre"           :   "//static.wepiao.com/",// here use CDN domain
-        "release"       :   "//static.wepiao.com/" // here use CDN domain
+        "release"       :   "" // here use CDN domain
     },
 
     // globals

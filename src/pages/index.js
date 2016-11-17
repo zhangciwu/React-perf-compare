@@ -1,7 +1,7 @@
 import './page'
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, hashHistory } from 'react-router'
 import { createHashHistory } from 'history'
 import objectAssign from 'object-assign'
 import { connect, Provider } from 'react-redux'
@@ -23,8 +23,8 @@ const routes = history => (
     </Router>
 )
 
-const store = configureStore(browserHistory)
-const history = syncHistoryWithStore(browserHistory, store)
+const store = configureStore(hashHistory)
+const history = syncHistoryWithStore(hashHistory, store)
 
 ReactDom.render(
     <Provider store={store}>
