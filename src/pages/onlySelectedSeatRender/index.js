@@ -3,13 +3,18 @@ import {connect as con} from 'react-redux'
 import {makeSeatIds, makeMapStateToProps} from 'app/selectors/onlySelectedSeatRender'
 
 @connect(makeSeatIds)
-export default class Home extends React.Component {
+export default class Seats extends React.Component {
     selectSeat = id => {
         console.time('update')
         this.props.actions.selectSeatAfter(id)
     }
 
+    componentDidMount() {
+        console.timeEnd('initial')
+    }
+
     render() {
+        console.time('initial')
         const {seatIds} = this.props
 
         return (

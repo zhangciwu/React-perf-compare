@@ -5,7 +5,7 @@ import * as actions from 'app/actions'
 function mapStateToProps(props, state) {
     if (!props) return state
 
-    if (typeof props === 'function') return props
+    if (typeof props === 'function') return props(state)
 
     if (typeof props === 'string') return { [props]: state[props] }
 

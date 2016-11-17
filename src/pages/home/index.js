@@ -8,7 +8,12 @@ export default class Home extends React.Component {
         this.props.actions.selectSeatBefore(id)
     }
 
+    componentDidMount() {
+        console.timeEnd('initial')
+    }
+
     render() {
+        console.time('initial')
         const {seats} = this.props
 
         return (
