@@ -1,4 +1,11 @@
-const seats = Array.from({length: 1000}, (s, i) => ({id: i, color: 'gray'}))
+const seatLength = 1000
+let seats = []
+for (let i = 0; i < seatLength; i++) {
+    seats.push({
+        id: i,
+        color: 'gray',
+    })
+}
 
 const initialState = {
     seats,
