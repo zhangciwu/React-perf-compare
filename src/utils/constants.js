@@ -1,1 +1,1 @@
-export const SEAT_LENGTH = 1000
+export const SEAT_LENGTH = 10000
