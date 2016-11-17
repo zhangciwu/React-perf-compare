@@ -1,6 +1,6 @@
 export function selectSeatBefore(id) {
     return (dispatch, getState) => {
-        const {selectedSeatIds} = getState().home
+        const {selectedSeatIds} = getState().before
         const index = selectedSeatIds.indexOf(id)
 
         if (index === -1) {
@@ -30,7 +30,7 @@ export function selectSeatBefore(id) {
 
 export function selectSeatAfter(id) {
     return (dispatch, getState) => {
-        const {seats, selectedSeatIds} = getState().home
+        const {seats, selectedSeatIds} = getState().after
         const index = selectedSeatIds.indexOf(id)
         if (index === -1) {
             const nextSelectedSeatIds = [
@@ -47,7 +47,7 @@ export function selectSeatAfter(id) {
             ]
 
             dispatch({
-                type: 'SELECT_SEAT',
+                type: 'SELECT_SEAT_AFTER',
                 seats: nextSeats,
                 selectedSeatIds: nextSelectedSeatIds,
             })
@@ -67,7 +67,7 @@ export function selectSeatAfter(id) {
             ]
 
             dispatch({
-                type: 'SELECT_SEAT',
+                type: 'SELECT_SEAT_AFTER',
                 seats: nextSeats,
                 selectedSeatIds: nextSelectedSeatIds,
             })

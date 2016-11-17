@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 
-const getSeats = state => state.home.seats
-const getSelectedSeatIds = state => state.home.selectedSeatIds
+const getSeats = state => state.before.seats
+const getSelectedSeatIds = state => state.before.selectedSeatIds
 
 export default createSelector(
     getSeats,

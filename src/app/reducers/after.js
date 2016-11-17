@@ -1,6 +1,8 @@
 const seatLength = 1000
 let seats = []
+let seatIds = []
 for (let i = 0; i < seatLength; i++) {
+    seatIds.push(i)
     seats.push({
         id: i,
         color: 'gray',
@@ -9,17 +11,13 @@ for (let i = 0; i < seatLength; i++) {
 
 const initialState = {
     seats,
-    seatIds: seats.map(s => s.id),
+    seatIds,
     selectedSeatIds: [],
 }
 
-export default function home (state = initialState, action) {
-    switch (action.type) {
-        case 'SELECT_SEAT_BEFORE':
-            return Object.assign({}, state, {
-                selectedSeatIds: action.selectedSeatIds,
-            })
-        case 'SELECT_SEAT':
+export default function beforeReducer(state = initialState, action) {
+    switch(action.type) {
+        case 'SELECT_SEAT_AFTER':
             return Object.assign({}, state, {
                 seats: action.seats,
                 selectedSeatIds: action.selectedSeatIds,

@@ -1,11 +1,11 @@
 import { createSelector } from 'reselect'
 
-const getSeats = state => state.home.seats
-const getSeatIds = state => state.home.seatIds
-const getSelectedSeatIds = state => state.home.selectedSeatIds
+const getSeats = state => state.after.seats
+const getSeatIds = state => state.after.seatIds
+const getSelectedSeatIds = state => state.after.selectedSeatIds
 
 const getSeat = (state, id) => {
-    return state.home.seats[id]
+    return state.after.seats[id]
 }
 
 const makeGetSeat = () => {

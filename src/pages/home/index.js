@@ -1,55 +1,12 @@
-import connect from 'utils/connect'
-import homeSelector from 'app/selectors/home'
+import { Link } from 'react-router'
 
-@connect(homeSelector)
-export default class Home extends React.Component {
-    selectSeat = id => {
-        console.time('update')
-        this.props.actions.selectSeatBefore(id)
-    }
-
-    componentDidMount() {
-        console.timeEnd('initial')
-    }
-
+export default class App extends React.Component {
     render() {
-        console.time('initial')
-        const {seats} = this.props
-
         return (
-            <ul className="Seats">
-                {
-                    seats.map(seat => <Seat
-                        key={seat.id}
-                        seat={seat}
-                        selectSeat={this.selectSeat}
-                        />
-                    )
-                }
+            <ul>
+                <li className="LinkItem"><Link to="/before">before</Link></li>
+                <li className="LinkItem"><Link to="/after">after</Link></li>
             </ul>
-        )
-    }
-}
-
-class Seat extends React.Component {
-    componentDidUpdate() {
-        console.timeEnd('update')
-    }
-    
-    shouldComponentUpdate(nextProps) {
-        const {seat} = this.props
-
-        return nextProps.seat.id !== seat.id ||
-            nextProps.seat.color !== seat.color
-    }
-
-    render() {
-        const {seat, selectSeat} = this.props
-
-        return (
-            <li className="Seat"
-                onClick={e => selectSeat(seat.id)}
-                style={{background: seat.color}}></li>
         )
     }
 }
