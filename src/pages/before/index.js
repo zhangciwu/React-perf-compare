@@ -1,8 +1,6 @@
 import connect from 'utils/connect'
 import beforeSelector from 'app/selectors/before'
 
-// with average 250ms initial and 58ms in update
-
 @connect(beforeSelector)
 export default class Home extends React.Component {
     selectSeat = id => {

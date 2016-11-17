@@ -2,8 +2,6 @@ import connect from 'utils/connect'
 import {connect as con} from 'react-redux'
 import {makeSeatIds, makeMapStateToProps} from 'app/selectors/after'
 
-// with average 427ms initial and 11ms in update
-
 @connect(makeSeatIds)
 export default class Seats extends React.Component {
     selectSeat = id => {
