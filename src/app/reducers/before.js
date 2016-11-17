@@ -1,6 +1,6 @@
-const seatLength = 1000
+import {SEAT_LENGTH} from 'utils/constants'
 let seats = []
-for (let i = 0; i < seatLength; i++) {
+for (let i = 0; i < SEAT_LENGTH; i++) {
     seats.push({
         id: i,
         color: 'gray',
