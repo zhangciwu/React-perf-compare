@@ -11,7 +11,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import Home from 'react-proxy?name=home!./home'
 import Before from 'react-proxy?name=home!./before'
 import After from './after'
-
+import AfterW from './after-w'
 Object.assign = objectAssign
 
 const routes = history => (
@@ -19,6 +19,7 @@ const routes = history => (
         <Route path="/" component={Home} />
         <Route path="/before" component={Before}></Route>
         <Route path="/after" component={After}></Route>
+        <Route path="/after-w" component={AfterW}></Route>
         <Route path="*" component={Home} />
     </Router>
 )

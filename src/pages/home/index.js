@@ -6,6 +6,7 @@ export default class App extends React.Component {
             <ul>
                 <li className="LinkItem"><Link to="/before">before</Link></li>
                 <li className="LinkItem"><Link to="/after">after</Link></li>
+                <li className="LinkItem"><Link to="/after-w">after-w</Link></li>
             </ul>
         )
     }
